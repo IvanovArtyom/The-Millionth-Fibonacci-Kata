@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Millionth Fibonacci Kata", "The Millionth Fibonacci Kata\The Millionth Fibonacci Kata.csproj", "{84237697-CB86-4F46-8D09-D72D63F8536A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84237697-CB86-4F46-8D09-D72D63F8536A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84237697-CB86-4F46-8D09-D72D63F8536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84237697-CB86-4F46-8D09-D72D63F8536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84237697-CB86-4F46-8D09-D72D63F8536A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A6A2147-89BE-4ED9-87AD-3F37CAC1517F}
+	EndGlobalSection
+EndGlobal
