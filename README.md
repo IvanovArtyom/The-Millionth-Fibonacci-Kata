@@ -27,3 +27,44 @@ Your algorithm must output the exact integer answer, to full precision. Also, it
 **HINT I:** Can you rearrange the equation ```fib(n + 2) = fib(n + 1) + fib(n)``` to find ```fib(n)``` if you already know ```fib(n + 1)``` and ```fib(n + 2)```? Use this to reason what value ```fib``` has to have for negative values.
 
 **HINT II:** See [this](https://web.archive.org/web/20220614001843/https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4).
+### My solution
+```C#
+using Nat = System.Numerics.BigInteger;
+
+public class Fibonacci
+{
+    public static Nat fib(Nat n)
+    {
+        if (n == 0)
+            return 0;
+
+        Nat _, fibonacci = MatrixPower(1, 1, 1, 0, Nat.Abs(n) - 1, out _, out _, out _);
+
+        return n < 0 && n.IsEven ? -fibonacci : fibonacci;
+    }
+
+    public static Nat MatrixPower(Nat a11, Nat a12, Nat a21, Nat a22, Nat n, out Nat b12, out Nat b21, out Nat b22)
+    {
+        if (n == 0)
+        {
+            b12 = b21 = 0;
+
+            return b22 = 1;
+        }
+
+        Nat c12, c21, c22, c11 = MatrixPower(a11, a12, a21, a22, n.IsEven ? n / 2 : n - 1, out c12, out c21, out c22);
+
+        if (n.IsEven)
+        {
+            a11 = c11; a12 = c12; 
+            a21 = c21; a22 = c22;
+        }
+
+        b12 = c11 * a12 + c12 * a22;
+        b21 = c21 * a11 + c22 * a21;
+        b22 = c21 * a12 + c22 * a22;
+
+        return c11 * a11 + c12 * a21;
+    }
+}
+```
