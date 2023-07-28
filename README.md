@@ -43,7 +43,8 @@ public class Fibonacci
         return n < 0 && n.IsEven ? -fibonacci : fibonacci;
     }
 
-    public static Nat MatrixPower(Nat a11, Nat a12, Nat a21, Nat a22, Nat n, out Nat b12, out Nat b21, out Nat b22)
+    public static Nat MatrixPower(Nat a11, Nat a12, Nat a21, Nat a22,
+        Nat n, out Nat b12, out Nat b21, out Nat b22)
     {
         if (n == 0)
         {
@@ -52,7 +53,8 @@ public class Fibonacci
             return b22 = 1;
         }
 
-        Nat c12, c21, c22, c11 = MatrixPower(a11, a12, a21, a22, n.IsEven ? n / 2 : n - 1, out c12, out c21, out c22);
+        Nat c12, c21, c22, c11 = MatrixPower(a11, a12, a21, a22,
+            n.IsEven ? n / 2 : n - 1, out c12, out c21, out c22);
 
         if (n.IsEven)
         {
